@@ -71,7 +71,7 @@ export const TimeLogAccordion: React.FC<TimeLogAccordionProps> = ({
               </label>
               <Select
                 color='info'
-                placeholder='Ticket Type'
+                // placeholder='Ticket Type'
                 className='w-full'
                 defaultValue={0}
                 value={
@@ -104,7 +104,7 @@ export const TimeLogAccordion: React.FC<TimeLogAccordionProps> = ({
               </label>
               <Select
                 color='info'
-                placeholder='Ticket Type'
+                // placeholder='Ticket Type'
                 className='w-full'
                 defaultValue={0}
                 value={

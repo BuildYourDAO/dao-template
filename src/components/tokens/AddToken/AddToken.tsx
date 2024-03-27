@@ -32,7 +32,7 @@ export const AddToken: React.FC<AddTokenProps> = ({ toggleVisible }) => {
             <span className='label-text'>Dao Address</span>
           </label>
           <Select
-            placeholder='Dao Address'
+            // placeholder='Dao Address'
             className='w-full'
             // onChange={(event) =>
             //   setArgValues({ ...argValues, daoAddress: event.target.value })
@@ -51,7 +51,7 @@ export const AddToken: React.FC<AddTokenProps> = ({ toggleVisible }) => {
             <span className='label-text'>Token Type</span>
           </label>
           <Select
-            placeholder='Account Address'
+            // placeholder='Account Address'
             className='w-full'
             // onChange={(event) =>
             //   setArgValues({ ...argValues, tokenType: event.target.value })
@@ -66,7 +66,7 @@ export const AddToken: React.FC<AddTokenProps> = ({ toggleVisible }) => {
             <span className='label-text'>Token Address</span>
           </label>
           <Select
-            placeholder='Token Address'
+            // placeholder='Token Address'
             className='w-full'
             // onChange={(event) =>
             //   setArgValues({ ...argValues, tokenAddress: event.target.value })

@@ -69,7 +69,7 @@ export default function HomePage() {
                   </label>
                   <Select
                     onChange={(e) => setAddress(e.target.value)}
-                    placeholder='Account Address'
+                    // placeholder='Account Address'
                     className='w-full'
                     defaultValue={accounts[0]?.address}
                   >

@@ -2,16 +2,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import {
-  Avatar,
-  Breadcrumbs,
-  Button,
-  Card,
-  Dropdown,
-  Navbar,
-} from 'react-daisyui';
-import { AiOutlineWallet } from 'react-icons/ai';
+import { Avatar, Breadcrumbs, Dropdown, Navbar } from 'react-daisyui';
 
+// import { AiOutlineWallet } from 'react-icons/ai';
 import { navigation } from '@/components/layout/Layout';
 import ThemeSwitch from '@/components/ThemeSwitch/ThemeSwitch';
 
@@ -49,33 +42,35 @@ export default function Header() {
           {currentAccount ? (
             <div className='flex items-center'>
               <ThemeSwitch />
-              <Dropdown horizontal='left' vertical='bottom'>
-                <Button
-                  className='mx-2'
-                  tabIndex={0}
-                  color='ghost'
-                  shape='circle'
-                >
-                  <AiOutlineWallet className='text-2xl' />
-                </Button>
-                <Dropdown.Menu
-                  tabIndex={0}
-                  className='card card-compact bg-base-100  mt-3 w-52 !p-0'
-                >
-                  <Card.Body className='card-body'>
-                    <span className='text-lg font-bold'>8 Items</span>
-                    <span className='text-info'>Subtotal: $999</span>
-                    <Card.Actions>
-                      <Button color='primary' fullWidth>
-                        View balance
-                      </Button>
-                    </Card.Actions>
-                  </Card.Body>
-                </Dropdown.Menu>
-              </Dropdown>
+              {/*
+                <Dropdown horizontal='left' vertical='bottom'>
+                    <Button
+                      className='mx-2'
+                      tabIndex={0}
+                      color='ghost'
+                      shape='circle'
+                    >
+                      <AiOutlineWallet className='text-2xl' />
+                    </Button>
+                  <Dropdown.Menu
+                    tabIndex={0}
+                    className='card card-compact bg-base-100  mt-3 w-52 !p-0'
+                  >
+                    <Card.Body className='card-body'>
+                      <span className='text-lg font-bold'>8 Items</span>
+                      <span className='text-info'>Subtotal: $999</span>
+                      <Card.Actions>
+                        <Button color='primary' fullWidth>
+                          View balance
+                        </Button>
+                      </Card.Actions>
+                    </Card.Body>
+                  </Dropdown.Menu>
+                </Dropdown>
+              */}
               <Dropdown horizontal='left' vertical='bottom'>
                 <Avatar
-                  className='cursor-pointer'
+                  className='mx-4 cursor-pointer'
                   size='xs'
                   online
                   shape='circle'

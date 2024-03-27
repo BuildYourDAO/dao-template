@@ -79,7 +79,7 @@ export const TicketModal: React.FC<TicketModalProps> = ({
               <Select
                 value={String(ticket.ticketStatus)}
                 color='info'
-                placeholder='Ticket Type'
+                // placeholder='Ticket Type'
                 className='w-full'
                 onChange={(e) => {
                   updateTicketStatus(

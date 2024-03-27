@@ -58,7 +58,7 @@ export const CreateProject: React.FC<CreateProjectProps> = ({
             <span className='label-text'>Choose member account</span>
           </label>
           <Select
-            placeholder='Account Address'
+            // placeholder='Account Address'
             className='w-full'
             onChange={(event) =>
               setArgValues({ ...argValues, assignedTo: event.target.value })

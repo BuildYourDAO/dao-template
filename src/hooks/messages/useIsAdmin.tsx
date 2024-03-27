@@ -5,6 +5,7 @@ import { useQuery } from '@/hooks/useQuery';
 
 import { useContract } from '@/context/contract/ContractContextProvider';
 import { isAdminInputSchema } from '@/helpers/schemas';
+import { validateSchema } from '@/helpers/validateSchema';
 
 import { CONTRACT_MESSAGES } from '@/types/enums';
 import { IsAdminInput } from '@/types/schemaTypes';
@@ -16,7 +17,9 @@ export const useIsAdmin = () => {
 
   const messageInfo = contract?.abi?.findMessage(CONTRACT_MESSAGES.IS_ADMIN);
 
-  const queryInfo = useQuery<IsAdminInput>(messageInfo, { mutate: true });
+  const queryInfo = useQuery<unknown, IsAdminInput>(messageInfo, {
+    mutate: true,
+  });
 
   const mutate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

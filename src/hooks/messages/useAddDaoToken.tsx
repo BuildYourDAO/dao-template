@@ -5,6 +5,7 @@ import { useQuery } from '@/hooks/useQuery';
 
 import { useContract } from '@/context/contract/ContractContextProvider';
 import { addDaoTokenInputSchema } from '@/helpers/schemas';
+import { validateSchema } from '@/helpers/validateSchema';
 
 import { CONTRACT_MESSAGES } from '@/types/enums';
 import { AddDaoTokenInput } from '@/types/schemaTypes';
@@ -18,7 +19,9 @@ export const useAddDaoToken = () => {
     CONTRACT_MESSAGES.ADD_DAO_TOKEN
   );
 
-  const queryInfo = useQuery<AddDaoTokenInput>(messageInfo, { mutate: true });
+  const queryInfo = useQuery<unknown, AddDaoTokenInput>(messageInfo, {
+    mutate: true,
+  });
 
   const mutate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

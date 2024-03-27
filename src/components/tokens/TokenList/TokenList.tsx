@@ -218,7 +218,7 @@ export const TokenList: React.FC<TokenListProps> = () => {
                   }
                 />
                 <Select
-                  placeholder='Assigned member'
+                  // placeholder='Assigned member'
                   onChange={(event) =>
                     setArgValues({ ...argValues, account: event.target.value })
                   }

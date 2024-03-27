@@ -5,6 +5,7 @@ import { useQuery } from '@/hooks/useQuery';
 
 import { useContract } from '@/context/contract/ContractContextProvider';
 import { setCodeInputSchema } from '@/helpers/schemas';
+import { validateSchema } from '@/helpers/validateSchema';
 
 import { CONTRACT_MESSAGES } from '@/types/enums';
 import { SetCodeInput } from '@/types/schemaTypes';
@@ -16,7 +17,9 @@ export const useSetCode = () => {
 
   const messageInfo = contract?.abi?.findMessage(CONTRACT_MESSAGES.SET_CODE);
 
-  const queryInfo = useQuery<SetCodeInput>(messageInfo, { mutate: true });
+  const queryInfo = useQuery<unknown, SetCodeInput>(messageInfo, {
+    mutate: true,
+  });
 
   const mutate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
