@@ -13,7 +13,7 @@ import { useSubstrateState } from '@/context/substrate/SubstrateContextProvider'
 export function AwaitApis({
   children,
 }: HTMLAttributes<HTMLDivElement>): React.ReactElement {
-  const { accounts, chainProps, apiState } = useSubstrateState();
+  const { accounts, apiState } = useSubstrateState();
   const { contractLoading } = useContract();
   const [web3Injected, setWeb3Injected] = useState(false);
 
@@ -29,14 +29,14 @@ export function AwaitApis({
     return <h1>error connection</h1>;
   }
 
-  if (
-    !web3Injected &&
-    apiState === 'READY' &&
-    !chainProps?.systemChainType.isDevelopment &&
-    isKeyringLoaded()
-  ) {
-    return <h1>extension error</h1>;
-  }
+  // if (
+  //   !web3Injected &&
+  //   apiState === 'READY' &&
+  //   !chainProps?.systemChainType.isDevelopment &&
+  //   isKeyringLoaded()
+  // ) {
+  //   return <h1>extension error</h1>;
+  // }
 
   if (isKeyringLoaded() && accounts?.length === 0) {
     return <h1>accounts error</h1>;

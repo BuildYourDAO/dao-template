@@ -50,7 +50,7 @@ export const UpdateTicketStatus: React.FC<UpdateTicketStatusProps> = ({
             <span className='label-text'> Status</span>
           </label>
           <Select
-            placeholder='Status'
+            // placeholder='Status'
             className='w-full'
             onChange={(event) =>
               setArgValues({ ...argValues, ticketStatus: event.target.value })

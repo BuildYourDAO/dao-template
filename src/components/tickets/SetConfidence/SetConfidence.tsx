@@ -48,7 +48,7 @@ export const SetConfidence: React.FC<SetConfidenceProps> = ({
           <Select
             value={confidenceLevel}
             onChange={(e) => setConfidenceLevel(Number(e.target.value))}
-            placeholder='Ticket Type'
+            // placeholder='Ticket Type'
             className='w-full'
           >
             {[...new Array(11)].map((_, index) => (

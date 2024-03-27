@@ -5,6 +5,7 @@ import { useQuery } from '@/hooks/useQuery';
 
 import { useContract } from '@/context/contract/ContractContextProvider';
 import { deleteMemberInputSchema } from '@/helpers/schemas';
+import { validateSchema } from '@/helpers/validateSchema';
 
 import { CONTRACT_MESSAGES } from '@/types/enums';
 import { DeleteMemberInput } from '@/types/schemaTypes';
@@ -18,7 +19,9 @@ export const useDeleteMember = () => {
     CONTRACT_MESSAGES.DELETE_MEMBER
   );
 
-  const queryInfo = useQuery<DeleteMemberInput>(messageInfo, { mutate: true });
+  const queryInfo = useQuery<unknown, DeleteMemberInput>(messageInfo, {
+    mutate: true,
+  });
 
   const mutate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

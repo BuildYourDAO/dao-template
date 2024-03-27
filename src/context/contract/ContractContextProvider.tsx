@@ -1,5 +1,5 @@
-import { ContractPromise } from '@polkadot/api-contract';
-import React, { useContext, useEffect, useState } from 'react';
+import { Abi, ContractPromise } from '@polkadot/api-contract';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { CONTRACT_ADDRESS } from '@/config';
@@ -30,21 +30,33 @@ const ContractContextProvider = (props: ContractContextProviderProps) => {
   const [contractLoading, setContractLoading] = useState(true);
 
   useEffect(() => {
-    if (api) {
-      try {
-        const address = CONTRACT_ADDRESS as string;
-        const contract = new ContractPromise(api, data, address);
-
-        setContract(contract);
-        setContractLoading(false);
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      } catch (error: unknown) {
-        setContractLoading(false);
-        alert(error);
-      }
-    }
+    handleSetContract(CONTRACT_ADDRESS as string, data);
   }, [api]);
+
+  const handleSetContract = useCallback(
+    (address: string, abi: string | Abi | Record<string, unknown>) => {
+      if (api) {
+        try {
+          setContractLoading(true);
+          const contract = new ContractPromise(api, abi, address);
+
+          setContract(contract);
+          setContractLoading(false);
+          return { success: true };
+        } catch (error: unknown) {
+          const err = error as { message: string };
+          setContractLoading(false);
+          toast.error(
+            (err?.message as string) || 'Unsuccessful connection to contract'
+          );
+          return { success: false };
+        }
+      }
+
+      return { success: false };
+    },
+    []
+  );
 
   const callMessage = async <T,>(
     message: AbiMessage,
@@ -99,7 +111,13 @@ const ContractContextProvider = (props: ContractContextProviderProps) => {
 
   return (
     <ContractContext.Provider
-      value={{ contract, callMessage, queryMessage, contractLoading }}
+      value={{
+        contract,
+        callMessage,
+        queryMessage,
+        contractLoading,
+        handleSetContract,
+      }}
     >
       {props.children}
     </ContractContext.Provider>

@@ -5,6 +5,7 @@ import { useQuery } from '@/hooks/useQuery';
 
 import { useContract } from '@/context/contract/ContractContextProvider';
 import { setDaoAdminInputSchema } from '@/helpers/schemas';
+import { validateSchema } from '@/helpers/validateSchema';
 
 import { CONTRACT_MESSAGES } from '@/types/enums';
 import { SetDaoAdminInput } from '@/types/schemaTypes';
@@ -18,7 +19,9 @@ export const useSetDaoAdmin = () => {
     CONTRACT_MESSAGES.SET_DAO_ADMIN
   );
 
-  const queryInfo = useQuery<SetDaoAdminInput>(messageInfo, { mutate: true });
+  const queryInfo = useQuery<unknown, SetDaoAdminInput>(messageInfo, {
+    mutate: true,
+  });
 
   const mutate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

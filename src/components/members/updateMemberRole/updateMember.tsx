@@ -50,7 +50,7 @@ export const UpdateMemberRole: React.FC<UpdateMemberRoleProps> = ({
             <span className='label-text'>Role</span>
           </label>
           <Select
-            placeholder='Status'
+            // placeholder='Status'
             className='w-full'
             onChange={(event) =>
               setArgValues({ ...argValues, role: event.target.value })

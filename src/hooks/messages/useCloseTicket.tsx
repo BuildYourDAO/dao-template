@@ -5,6 +5,7 @@ import { useQuery } from '@/hooks/useQuery';
 
 import { useContract } from '@/context/contract/ContractContextProvider';
 import { closeTaskInputSchema } from '@/helpers/schemas';
+import { validateSchema } from '@/helpers/validateSchema';
 
 import { CONTRACT_MESSAGES } from '@/types/enums';
 import { CloseTaskInput } from '@/types/schemaTypes';
@@ -16,7 +17,9 @@ export const useCloseTicket = () => {
 
   const messageInfo = contract?.abi?.findMessage(CONTRACT_MESSAGES.CLOSE_TASK);
 
-  const queryInfo = useQuery<CloseTaskInput>(messageInfo, { mutate: true });
+  const queryInfo = useQuery<unknown, CloseTaskInput>(messageInfo, {
+    mutate: true,
+  });
 
   const mutate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

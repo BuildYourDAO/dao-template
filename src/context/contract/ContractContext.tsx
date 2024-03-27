@@ -1,4 +1,4 @@
-import { ContractPromise } from '@polkadot/api-contract';
+import { Abi, ContractPromise } from '@polkadot/api-contract';
 import { createContext } from 'react';
 
 import {
@@ -19,6 +19,10 @@ export interface ContractContextType {
   ) => Promise<void>;
   queryMessage: (...args: QueryMessageProps[]) => Promise<ContractExecResult>;
   contractLoading: boolean;
+  handleSetContract: (
+    address: string,
+    abi: string | Abi | Record<string, unknown>
+  ) => { success: boolean };
 }
 
 const ContractContextValues = {} as ContractContextType;

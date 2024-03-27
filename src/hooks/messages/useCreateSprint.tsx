@@ -5,6 +5,7 @@ import { useQuery } from '@/hooks/useQuery';
 
 import { useContract } from '@/context/contract/ContractContextProvider';
 import { createSprintInputSchema } from '@/helpers/schemas';
+import { validateSchema } from '@/helpers/validateSchema';
 
 import { CONTRACT_MESSAGES } from '@/types/enums';
 import { CreateSprintInput } from '@/types/schemaTypes';
@@ -18,7 +19,9 @@ export const UseCreateSprint = () => {
     CONTRACT_MESSAGES.CREATE_SPRINT
   );
 
-  const queryInfo = useQuery<CreateSprintInput>(messageInfo, { mutate: true });
+  const queryInfo = useQuery<unknown, CreateSprintInput>(messageInfo, {
+    mutate: true,
+  });
 
   const mutate = async () => {
     const validationError = await validateSchema(

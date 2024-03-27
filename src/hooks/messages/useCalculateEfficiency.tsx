@@ -5,6 +5,7 @@ import { useQuery } from '@/hooks/useQuery';
 
 import { useContract } from '@/context/contract/ContractContextProvider';
 import { calculateEfficiencyInputSchema } from '@/helpers/schemas';
+import { validateSchema } from '@/helpers/validateSchema';
 
 import { CONTRACT_MESSAGES } from '@/types/enums';
 import { CalculateEfficiencyInput } from '@/types/schemaTypes';
@@ -18,7 +19,7 @@ export const useCalculateEfficiency = () => {
     CONTRACT_MESSAGES.CALCULATE_EFFICIENCY
   );
 
-  const queryInfo = useQuery<CalculateEfficiencyInput>(messageInfo, {
+  const queryInfo = useQuery<unknown, CalculateEfficiencyInput>(messageInfo, {
     mutate: true,
   });
 

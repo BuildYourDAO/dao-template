@@ -62,7 +62,7 @@ export const CreateTicket: React.FC<CreateTicketProps> = ({
           </label>
 
           <Select
-            placeholder='Ticket Type'
+            // placeholder='Ticket Type'
             className='w-full'
             value={argValues.ticketType}
             onChange={(event) =>
@@ -84,7 +84,7 @@ export const CreateTicket: React.FC<CreateTicketProps> = ({
             <span className='label-text'>Assigned member</span>
           </label>
           <Select
-            placeholder='Assigned member'
+            // placeholder='Assigned member'
             className='w-full'
             onChange={(event) =>
               setArgValues({ ...argValues, assignedTo: event.target.value })
