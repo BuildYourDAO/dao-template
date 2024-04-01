@@ -46,13 +46,13 @@ export default function ProjectInfoPage() {
             ) : (
               <div className='mx-auto my-5 w-full max-w-[1000px]'>
                 <div className='px-4 sm:px-0'>
-                  <h3 className='text-base font-semibold leading-7 text-gray-900'>
+                  <h3 className='text-base-content text-base font-semibold leading-7'>
                     Project Information
                   </h3>
-                  <p className='mt-1 max-w-2xl text-sm leading-6 text-gray-500'></p>
+                  <p className='text-base-content mt-1 max-w-2xl text-sm leading-6'></p>
                 </div>
                 <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-                  <dt className='text-sm font-medium leading-6 text-gray-900'>
+                  <dt className='text-base-content text-sm font-medium leading-6'>
                     Project sprint
                   </dt>
                   <div>
@@ -80,42 +80,42 @@ export default function ProjectInfoPage() {
                 <div className='mt-6 border-t border-gray-100'>
                   <dl className='divide-y divide-gray-100'>
                     <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-                      <dt className='text-sm font-medium leading-6 text-gray-900'>
+                      <dt className='text-base-content text-sm font-medium leading-6'>
                         Project Id
                       </dt>
-                      <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+                      <dd className='text-base-content mt-1 text-sm leading-6 sm:col-span-2 sm:mt-0'>
                         {decodedOutput.value.Ok.projectId}
                       </dd>
                     </div>
                     <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-                      <dt className='text-sm font-medium leading-6 text-gray-900'>
+                      <dt className='text-base-content text-sm font-medium leading-6'>
                         Assigned to
                       </dt>
-                      <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+                      <dd className='text-base-content mt-1 text-sm leading-6 sm:col-span-2 sm:mt-0'>
                         {decodedOutput.value.Ok.assignedTo}
                       </dd>
                     </div>
                     <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-                      <dt className='text-sm font-medium leading-6 text-gray-900'>
+                      <dt className='text-base-content text-sm font-medium leading-6'>
                         Creator
                       </dt>
-                      <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+                      <dd className='text-base-content mt-1 text-sm leading-6 sm:col-span-2 sm:mt-0'>
                         {decodedOutput.value.Ok.creator}
                       </dd>
                     </div>
                     <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-                      <dt className='text-sm font-medium leading-6 text-gray-900'>
+                      <dt className='text-base-content text-sm font-medium leading-6'>
                         StartTime
                       </dt>
-                      <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+                      <dd className='text-base-content mt-1 text-sm leading-6 sm:col-span-2 sm:mt-0'>
                         {decodedOutput.value.Ok.startTime}
                       </dd>
                     </div>
                     <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-                      <dt className='text-sm font-medium leading-6 text-gray-900'>
+                      <dt className='text-base-content text-sm font-medium leading-6'>
                         End Time
                       </dt>
-                      <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+                      <dd className='text-base-content mt-1 text-sm leading-6 sm:col-span-2 sm:mt-0'>
                         {decodedOutput.value.Ok.endTime !== null ? (
                           new Date(
                             parseInt(decodedOutput.value.Ok.endTime)
@@ -126,18 +126,18 @@ export default function ProjectInfoPage() {
                       </dd>
                     </div>
                     <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-                      <dt className='text-sm font-medium leading-6 text-gray-900'>
+                      <dt className='text-base-content text-sm font-medium leading-6'>
                         Project Status
                       </dt>
-                      <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+                      <dd className='text-base-content mt-1 text-sm leading-6 sm:col-span-2 sm:mt-0'>
                         {decodedOutput.value.Ok.projectStatus}
                       </dd>
                     </div>
                     <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-                      <dt className='text-sm font-medium leading-6 text-gray-900'>
+                      <dt className='text-base-content text-sm font-medium leading-6'>
                         Project Description
                       </dt>
-                      <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+                      <dd className='text-base-content mt-1 text-sm leading-6 sm:col-span-2 sm:mt-0'>
                         {decodedOutput.value.Ok.description}
                       </dd>
                     </div>
